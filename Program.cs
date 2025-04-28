@@ -5,7 +5,9 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Simple Calculator");
-        while (true)    // The entire app is wrapped in a "while" loop that is set to "true" by default.
+
+        bool keepRunning = true;
+        while (keepRunning)    // The entire app is wrapped in a "while" loop that is set to "true" by default.
         {
             try
             {
@@ -43,7 +45,15 @@ class Program
                 }
             
                 Console.WriteLine("Result: " + result);
-                break;  //Exit the loop after successful calculation
+                //Ask the user if they want to continue
+                Console.Write("Would you like to perform another calculation? (y/n): ");
+                string answer = Console.ReadLine().ToLower();  // Creates a string called "answer" and sets the value to whatever the user input in lowercase.
+               
+                if (answer != "y'" && answer != "yes")  //Checks if the user input "y" or "yes". If not, then boolean "keepRunning is set to false and ends loop.
+                {
+                    keepRunning = false;
+                    Console.WriteLine("Thank you for using the calculator");
+                }
               }
               catch (FormatException)
             {
