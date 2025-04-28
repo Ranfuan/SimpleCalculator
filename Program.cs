@@ -5,46 +5,50 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Simple Calculator");
-        try
-        { 
-        Console.Write("Enter first number: ");
-        double num1 = Convert.ToDouble(Console.ReadLine());
-
-        Console.Write("Enter operator (+, -, *, /): ");
-        string op = Console.ReadLine();
-
-        Console.Write("Enter second number: ");
-        double num2 = Convert.ToDouble(Console.ReadLine());
-
-        double result = 0;
-
-            if (op == "+")
-                result = num1 + num2;
-            else if (op == "-")
-                result = num1 - num2;
-            else if (op == "*")
-                result = num1 * num2;
-            else if (op == "/")
+        while (true)    // The entire app is wrapped in a "while" loop that is set to "true" by default.
+        {
+            try
             {
-                if (num2 != 0)
-                    result = num1 / num2;
+                Console.Write("Enter first number: ");
+                double num1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Enter operator (+, -, *, /): ");
+                string op = Console.ReadLine();
+
+                Console.Write("Enter second number: ");
+                double num2 = Convert.ToDouble(Console.ReadLine());
+
+                double result = 0;
+
+                if (op == "+")
+                    result = num1 + num2;
+                else if (op == "-")
+                    result = num1 - num2;
+                else if (op == "*")
+                    result = num1 * num2;
+                else if (op == "/")
+                {
+                    if (num2 != 0)
+                        result = num1 / num2;
+                    else
+                    {
+                        Console.WriteLine("Error: Cannot divide by zero.");
+                        continue;   //Restart the loop
+                    }
+                }
                 else
                 {
-                    Console.WriteLine("Error: Cannot divide by zero.");
-                    return;
+                    Console.WriteLine("Invalid operator.");
+                    continue;   //Restart the loop
                 }
-            }
-            else
+            
+                Console.WriteLine("Result: " + result);
+                break;  //Exit the loop after successful calculation
+              }
+              catch (FormatException)
             {
-                Console.WriteLine("Invalid operator.");
-                return;
+               Console.WriteLine("Please enter only numeric values.");
             }
-
-            Console.WriteLine("Result: " + result);
-        }
-        catch (FormatException)
-        {
-            Console.WriteLine("Please enter only numeric values.");
         }
     }
 }
