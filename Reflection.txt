@@ -1,0 +1,13 @@
+What did you learn about Git or GitHub?
+
+Using Github.com was a confusing new experience for me. I've never used it and do not have an immediate need for its utility since I am still in the very beginnings of the learning stage when it comes to programming. After lightly tinkering with the platform, I've learned a few things about it. Github makes it incredibly easy to document your work on a project, this is especially true if the project is in a bigger scale with an actual team. With Github you can have multiple people working on the same project while not in the immediate vincinity and still have nearly live updates. The platform also allows programmers to make changes that lead into "forks" or divergences that can later be either re-utilized or made into their own program. In my opinion the best feature of Github is the ability to make changes and revert back to an earlier iteration of the same work. I haven't gotten a chance to use this feature, but I can tell this would be an incredibly useful feature in the future when my projects get bigger in scope.
+
+What did you change in each commit?
+
+The first commit I made was very small. I simply added a "try and catch" exception handler to fulfill the in-class requirements for the assignment.
+
+My second commit was little more complicated. I added a while loop that allowed the program to continue its flow without immediately terminating if the user provided incorrect input. Such as providing letters or symbols when the program asked for numbers.
+
+The third commit consisted of inproving the main program "while" loop to ask the user whether they wanted to continue. The program would teminate after one successful calculation before this modification. Now the program gave the user the option to perform another calculation or exit.
+
+The fourth and final commit was the most complicated and time consuming modification of all. This required me to nearly completely re-write the entire program in an attempt to refactor its logic. This resulted in the cration of different functions that handled different aspects of the programs.
